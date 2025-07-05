@@ -5,6 +5,7 @@ int switchState = 0;
 int prevSwitchState = 0;
 int reply;
 
+
 void setup() {
   // put your setup code here, to run once:
   lcd.begin(16,2);
@@ -12,10 +13,13 @@ void setup() {
   lcd.print("Ask the");
   lcd.setCursor(0,1);
   lcd.print("Curstal Ball!");
+
+  Serial.begin(9600);
 }
 
 void loop() {
   switchState = digitalRead(switchPin);
+  Serial.println(switchState);
   if(switchState != prevSwitchState){
 
   
